@@ -7,8 +7,18 @@ public class FigureSupplier {
     private final Random random = new Random();
 
     public Figure getRandomFigure() {
+        String randomColor = colorSupplier.getRandomColor();
+        double randomSide = random.nextDouble(25);
+
         Figure[] figures = {
-                new Circle(colorSupplier.getRandomColor(), random.nextDouble(100)),
+                new Circle(randomColor, random.nextDouble(15)),
+                new Square(colorSupplier.getRandomColor(), randomSide),
+                new Rectangle(colorSupplier.getRandomColor(),
+                        random.nextDouble(15),
+                        random.nextDouble(15, 25)
+                ),
+                new RightTriangle(randomColor, randomSide),
+                new IsoscelesTrapezoid(randomColor, randomSide, randomSide)
         };
 
         return figures[random.nextInt(figures.length)];
