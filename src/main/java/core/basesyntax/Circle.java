@@ -3,15 +3,15 @@ package core.basesyntax;
 public class Circle extends Figure {
     private final double radius;
 
-    public Circle(String color, double area, double radius) {
-        super(color, area);
+    public Circle(String color, double radius) {
+        super(color);
         this.radius = radius;
     }
 
     @Override
     public String draw() {
-        return "Figure: circle, area: " + area
-                + " sq. units, radius: " + radius
+        return "Figure: circle, "
+                + "radius: " + radius
                 + " color: " + color;
     }
 }
