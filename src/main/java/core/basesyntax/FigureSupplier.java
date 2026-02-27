@@ -25,6 +25,6 @@ public class FigureSupplier {
     }
 
     public Figure getDefaultFigure() {
-        return new Circle(colorSupplier.getRandomColor(), 10.0);
+        return new Circle(Color.WHITE.name().toLowerCase(), 10.0);
     }
 }

@@ -1,7 +1,7 @@
 package core.basesyntax;
 
 public class Application {
-    public final static int FIGURES_NUMBER = 6;
+    public static final int FIGURES_NUMBER = 6;
 
     public static void main(String[] args) {
         FigureSupplier figureSupplier = new FigureSupplier();
