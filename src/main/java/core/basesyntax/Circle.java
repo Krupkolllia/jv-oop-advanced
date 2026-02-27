@@ -12,7 +12,7 @@ public class Circle extends Figure {
     public String draw() {
         return "Figure: circle, "
                 + "area: " + getArea() + " sq. units"
-                + ", radius: " + radius
+                + ", radius: " + radius + " units"
                 + ", color: " + color;
     }
 
