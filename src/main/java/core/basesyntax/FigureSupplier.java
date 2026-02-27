@@ -14,20 +14,21 @@ public class FigureSupplier {
 
     public Figure getRandomFigure() {
         String randomColor = colorSupplier.getRandomColor();
+        int randomInt = random.nextInt(BOTTOM_RANDOM_BOUND, UPPER_RANDOM_BOUND);
 
         Figure[] figures = {
-                new Circle(randomColor, getRandomInt()),
-                new Square(randomColor, getRandomInt()),
+                new Circle(randomColor, randomInt),
+                new Square(randomColor, randomInt),
                 new Rectangle(randomColor,
-                        getRandomInt(),
-                        getRandomInt()
+                        randomInt,
+                        randomInt
                 ),
-                new RightTriangle(randomColor, getRandomInt(), getRandomInt()),
+                new RightTriangle(randomColor, randomInt, randomInt),
                 new IsoscelesTrapezoid(
                         randomColor,
-                        getRandomInt(),
-                        getRandomInt(),
-                        getRandomInt())
+                        randomInt,
+                        randomInt,
+                        randomInt)
         };
 
         return figures[random.nextInt(figures.length)];
@@ -35,9 +36,5 @@ public class FigureSupplier {
 
     public Figure getDefaultFigure() {
         return new Circle(DEFAULT_COLOR.toLowerCase(), DEFAULT_RADIUS);
-    }
-    
-    private int getRandomInt() {
-        return random.nextInt(BOTTOM_RANDOM_BOUND, UPPER_RANDOM_BOUND);
     }
 }
