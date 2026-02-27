@@ -1,20 +1,26 @@
 package core.basesyntax;
 
 public class Rectangle extends Figure {
-    private final double smallerSide;
-    private final double biggerSide;
+    private final int smallerSide;
+    private final int biggerSide;
 
-    public Rectangle(String color, double smallerSide, double biggerSide) {
+    public Rectangle(String color, int firstSide, int secondSide) {
         super(color);
-        this.smallerSide = smallerSide;
-        this.biggerSide = biggerSide;
+        this.biggerSide = Math.max(firstSide, secondSide);
+        this.smallerSide = Math.min(firstSide, secondSide);
     }
 
     @Override
     public String draw() {
         return "Figure: rectangle, "
-                + "smaller side length: " + smallerSide
-                + "bigger side length: " + biggerSide
-                + " color: " + color;
+                + "area: " + getArea() + " sq. units"
+                + ", smaller side: " + smallerSide
+                + ", bigger side: " + biggerSide
+                + ", color: " + color;
+    }
+
+    @Override
+    public double getArea() {
+        return (double) smallerSide * biggerSide;
     }
 }

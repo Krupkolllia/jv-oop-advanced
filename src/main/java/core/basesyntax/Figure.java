@@ -7,4 +7,5 @@ public abstract class Figure implements Drawable {
         this.color = color;
     }
 
+    public abstract double getArea();
 }
